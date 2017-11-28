@@ -69,6 +69,9 @@ var Forsida = function () {
       var divInfo = document.createElement('div');
       var duration = document.createElement('div');
 
+      var a = document.createElement('a');
+      a.href = 'Spilari.html?id=${flokkur[id]}';
+
       var img = document.createElement('img');
       img.src = video.poster;
       divVideo.appendChild(img);
@@ -89,11 +92,11 @@ var Forsida = function () {
       divInfo.appendChild(d);
 
       var link = document.createElement('a');
-      var a = window.location.href;
+      // const a = window.location.href;
       var href = document.createTextNode(a);
       link.setAttribute('href', href + '/Spilari.html?id=' + video.id);
       console.log(video.id);
-      console.log(href);
+      console.log(link);
 
       divContain.appendChild(divVideo);
       divContain.appendChild(divInfo);
@@ -102,6 +105,7 @@ var Forsida = function () {
       return divContain;
       // this.divFlokkur.appendChild(divContain);
       // this.Sida.appendChild(this.divFlokkur);
+
     }
   }, {
     key: 'init',
