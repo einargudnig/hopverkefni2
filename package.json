@@ -4,7 +4,7 @@
   "description": "",
   "main": "scripts.js",
   "scripts": {
-    "eslint": "eslint script.js",
+    "eslint": "eslint Forsida.js",
     "stylelint": "stylelint *.scss scss/*.scss --syntax scss",
     "lint": "npm-run-all --parallel eslint stylelint",
     "babel": "babel Forsida.js --watch --out-file script-compiled.js --source-maps",

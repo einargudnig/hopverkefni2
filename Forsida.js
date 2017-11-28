@@ -63,7 +63,7 @@ class Forsida {
     const title = document.createElement('H4');
     const t = document.createTextNode(video.title);
     title.appendChild(t);
-    title.classList.add('h4');
+    title.classList.add('litidhead');
     divInfo.appendChild(title);
 
     const Date = this.getDate(video.created);
