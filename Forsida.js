@@ -74,12 +74,12 @@ class Forsida {
     // const a = window.location.href;
     //const href = document.createElement(a);
     link.setAttribute('href', `Spilari.html?id=${video.id}`);
+    divContain.appendChild(link);
 
     console.log(link);
 
     divContain.appendChild(divVideo);
     divContain.appendChild(divInfo);
-    divContain.appendChild(link);
     divContain.classList.add('vidMain');
     return divContain;
     // this.divFlokkur.appendChild(divContain);
