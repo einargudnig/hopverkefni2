@@ -37,7 +37,9 @@
     line-height: 2;
     flex-wrap: wrap;
     width: 48%;
-    img {
+    @media (max-width: 500px) {
+      width: 100%;
+      flex-wrap: nowrap;
     }
   }
 
