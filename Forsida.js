@@ -70,13 +70,12 @@ class Forsida {
     const d = document.createTextNode(Date);
     divInfo.appendChild(d);
 
-    const link = document.createElement('a');
+    const link = document.createElement('link');
     // const a = window.location.href;
-    const href = document.createTextNode(a);
-    link.setAttribute('href', `${href}/Spilari.html?id=${video.id}`);
-    console.log(video.id);
-    console.log(link);
+    //const href = document.createElement(a);
+    link.setAttribute('href', `Spilari.html?id=${video.id}`);
 
+    console.log(link);
 
     divContain.appendChild(divVideo);
     divContain.appendChild(divInfo);
