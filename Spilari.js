@@ -151,12 +151,12 @@ class Spilari {
 
 // Virkni á 'spóla áfram takkann'
   forward() {
-  this.video.currentTime = this.video,currentTime + 3;
+  this.video.currentTime = this.video.currentTime + 3;
   }
 
 // Virkni á 'spóla afturábak takkann'
   backward() {
-  this.video.currentTime = this.video,currentTime - 3;
+  this.video.currentTime = this.video.currentTime - 3;
    }
 
 }
