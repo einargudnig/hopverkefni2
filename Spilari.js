@@ -1,19 +1,3 @@
-/*
-*var Spilaris = (function() {
-*
-*  function init() {
-*    nr = form.querySelector('#number');
-*    texti = results;
-*
-*    form.addEventListener('submit', findCar);
-*  }
-*
-*  return {
-*    init: init
-*  }
-*})();
-*/
-
 class Spilari {
 /*
 * í smiðnum upphafsstillum við breytur
@@ -21,6 +5,7 @@ class Spilari {
 */
   constructor() { // smiður
   // Upphafstilum breytur
+    this.Sida = document.querySelector('.mainSpilari');
     this.id = null;
     this.videos = null;
     this.categories = null;
@@ -55,36 +40,18 @@ class Spilari {
 
 
 /*
-* Sýnir skilaboð þegar verið er að hlaða niður gögnum
-*/
-  showLoad() {
-
-  }
-
-/*
-* Felur sömu skilaboð
-*/
-  hideLoad() {
-
-  }
-
-/*
-* Sýnir villuskilaboð
-* Birtir villuskilaboð sem koma fram í Forsida.js
-*
-*/
-  showError(e) {
-
-  }
-
-/*
 * Smíðum HTML sem er útlit spilarans
 * Hlöðum inn const(header/img/source) úr þeirra fylkjum.
 * Búum svo til header
 * Gerum videoImg undir, sem er .poster úr videos.json
 * Gerum "playOverlay" þegar playtakki kemur yfir mynband
 */
-  loadHTML() {
+  makeHTML() {
+    const h1 = document.createElement('h1');
+    const videoplayer = document.createElement('video');
+
+
+
 
   }
 
@@ -101,25 +68,19 @@ class Spilari {
 * græja villur fyrir 200/400
 *
 */
-  fetchJSON() {
+  fetchJson() {
     const request = new XMLHttpRequest();
     request.overrideMimeType('application/json');
-    request.open('GET', 'videos.json', true);
-    console.log(request);
-    request.onload = () => {
+    request.open('GET', './videos.json', true);
+    request.onload = function onLoad() {
+      const data = JSON.parse(request.response);
+      const x = window.location.search.substring(4);
       if (request.status >= 200 && request.status < 400) {
-        const data = JSON.parse(request.response);
-        console.log(data);
-        this.createVideos(data);
-      } else if (request.status >= 400) {
-        // villu melding
+         myFunction(data, x);
+      } else {
+        alert("Villa kom upp!");
       }
     };
-
-    request.onerror = () => {
-
-    };
-
     request.send();
   }
 
@@ -132,6 +93,10 @@ class Spilari {
 */
   play() {
 
+  }
+
+  init(content) {
+    this.Sida = content;
   }
 
 /*
@@ -166,7 +131,9 @@ function onVideo() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const p = new Spilari();
-  // p.load();
-  this.fetchJSON();
+  const content = document.querySelector('.mainSpilari');
+  const spilari = new Spilari();
+
+  spilari.init(content);
+  spilari.fetchJSON();
 });
