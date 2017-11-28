@@ -73,7 +73,7 @@ class Forsida {
     const link = document.createElement('a');
     // const a = window.location.href;
     const href = document.createTextNode(a);
-    link.setAttribute('href', `${href}/Spilari.html?id=${video.id}`);
+    link.setAttribute('href', `Spilari.html?id=${video.id}`);
     console.log(video.id);
     console.log(link);
 
