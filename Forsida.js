@@ -50,7 +50,6 @@ class Forsida {
     const duration = document.createElement('div');
 
     const a = document.createElement('a');
-    a.href = 'Spilari.html?id=${flokkur[id]}';
 
     const img = document.createElement('img');
     img.src = video.poster;

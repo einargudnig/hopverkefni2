@@ -70,7 +70,6 @@ var Forsida = function () {
       var duration = document.createElement('div');
 
       var a = document.createElement('a');
-      a.href = 'Spilari.html?id=${flokkur[id]}';
 
       var img = document.createElement('img');
       img.src = video.poster;
